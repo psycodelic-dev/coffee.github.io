@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (ViewBag.UserName != null)
+{
+    <h2 style="color: #ece6df; font-size: 90px;">Welcome, @ViewBag.UserName!</h2>
+}
+else
+{
+    <h1 style="color: #ece6df; font-size: 90px;">Welcome to CoffeeShop!</h1>
+}
+
+<style>
+    body {
+    background-image: url("/images/background3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    }
+</style>
+
+<script> //javascript kullanımı burada
+    window.addEventListener('load', () => {
+        const userName = '@ViewBag.UserName';
+        if(userName) {
+            alert(`Welcome back, ${userName}!`);
+        }
+    });
+</script>

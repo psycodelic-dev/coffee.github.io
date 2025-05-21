@@ -1,0 +1,30 @@
+@model List<Category>
+
+<style>
+    body {
+    background: linear-gradient(45deg, #ece6df, #d1c7bb);
+
+    }
+</style>
+
+<h2 style="color: #3a3a3a;">Categories</h2>
+
+<div class="row">
+@foreach (var category in Model)
+{
+    <div class="col-md-4 mb-4">
+        <a asp-action="ProductsByCategory" asp-route-category="@category.Name" class="text-decoration-none text-dark">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="@category.ImageUrl" class="img-fluid rounded-start" alt="@category.Name" />
+                    </div>
+                    <div class="col-8 d-flex align-items-center">
+                        <h5 class="card-title p-3">@category.Name</h5>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+}
+</div>
